@@ -1,67 +1,111 @@
-/* Estilo para a tela de boas-vindas */
-#welcome {
-  background: linear-gradient(135deg, #ffb6c1, #ffe6f0);
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 40px 30px;
-  border-radius: 25px;
-  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #fff1f5, #ffe6f0);
+  color: #333;
+}
+
+/* TELAS */
+#welcome, #main-content {
   text-align: center;
-  font-family: 'Great Vibes', cursive;
-  color: #a83266;
-  user-select: none;
+  padding: 50px 20px;
 }
 
-/* Título na tela de boas-vindas */
-#welcome h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  letter-spacing: 1.2px;
-  text-shadow: 1px 1px 3px #ff7f9c;
+#main-content {
+  display: none;
 }
 
-/* Texto explicativo */
-#welcome p {
+/* INPUT E BOTÃO */
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ffb6c1;
+  margin-top: 10px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  margin-bottom: 25px;
-  font-size: 18px;
 }
 
-/* Input de nome */
-#welcome input[type="text"] {
-  padding: 12px 18px;
-  width: 80%;
-  border-radius: 30px;
-  border: 2px solid #ff5f87;
-  font-size: 18px;
-  font-family: 'Roboto', sans-serif;
-  transition: border-color 0.3s ease;
-  outline: none;
-}
-
-/* Foco no input */
-#welcome input[type="text"]:focus {
-  border-color: #ff2e63;
-  box-shadow: 0 0 10px #ff2e63aa;
-}
-
-/* Botão estilizado */
-#welcome button {
-  margin-top: 20px;
-  padding: 12px 40px;
-  background-color: #ff5f87;
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ff8fb1;
   color: white;
-  font-size: 20px;
-  font-weight: 600;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 12px #ff2e6388;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-#welcome button:hover {
-  background-color: #ff2e63;
-  box-shadow: 0 6px 18px #ff2e63cc;
+button:hover {
+  background-color: #ff5f87;
+}
+
+/* HEADER */
+header {
+  background-color: #ff8fb1;
+  color: white;
+  padding: 50px 20px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 1px;
+}
+
+/* SEÇÕES DE CARDS */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 22px;
+  color: #ff5f87;
+}
+
+.card p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
