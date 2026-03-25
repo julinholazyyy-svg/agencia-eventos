@@ -2,192 +2,46 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Agência de Casamentos & Eventos</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap" rel="stylesheet">
-
+  <title>Agência de Eventos</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* --- Estilo da tela inicial decorada --- */
-    body {
-      margin: 0;
-      font-family: 'Merriweather', serif;
-      background: #fff0f5;
-      color: #a64d79;
-    }
-
-    /* Tela inicial (welcome) */
-    #welcome {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(rgba(255,240,245,0.85), rgba(255,240,245,0.85)),
-                  url('https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    #welcome .welcome-box {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 50px 40px;
-      border-radius: 35px;
-      box-shadow: 0 15px 40px rgba(166, 77, 121, 0.3);
-      text-align: center;
-      max-width: 420px;
-      width: 90%;
-    }
-
-    #welcome h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px #d79dc9;
-    }
-
-    #welcome .decor {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #d471a0;
-    }
-
-    #welcome p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      font-weight: 600;
-    }
-
-    #welcome input[type="text"] {
-      width: 85%;
-      padding: 14px 20px;
-      border-radius: 30px;
-      border: 2px solid #d471a0;
-      font-size: 1.1rem;
-      outline: none;
-      box-shadow: inset 0 0 10px #f3c8db;
-    }
-
-    #welcome input[type="text"]:focus {
-      border-color: #a64d79;
-      box-shadow: 0 0 12px #a64d79cc;
-    }
-
-    #welcome button {
-      margin-top: 30px;
-      padding: 14px 50px;
-      border-radius: 30px;
-      background: linear-gradient(45deg, #d471a0, #a64d79);
-      border: none;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 6px 18px #a64d79bb;
-      transition: background 0.4s ease;
-    }
-
-    #welcome button:hover {
-      background: linear-gradient(45deg, #a64d79, #d471a0);
-      box-shadow: 0 8px 22px #d471a0dd;
-    }
-
-    /* Conteúdo principal do site escondido inicialmente */
-    #main-content {
-      display: none;
-      padding: 20px;
-    }
-
-    /* Pequenas melhorias para os cards de espaços */
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(166,77,121,0.2);
-      padding: 20px;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-
-    .card button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      border-radius: 20px;
-      background-color: #d471a0;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .card button:hover {
-      background-color: #a64d79;
-    }
-
-  </style>
 </head>
 <body>
 
   <!-- Tela de boas-vindas -->
   <div id="welcome">
-    <div class="welcome-box">
-      <h2>Seja Bem-vindo!</h2>
-      <div class="decor">💐 ✨ 💍</div>
-      <p>Digite seu nome para começar a planejar o evento dos seus sonhos:</p>
-      <input type="text" id="username" placeholder="Seu nome aqui" />
-      <button onclick="enterSite()">Entrar</button>
-    </div>
+    <h2>Bem-vindo à nossa Agência!</h2>
+    <p>Por favor, digite seu nome para continuar:</p>
+    <input type="text" id="username" placeholder="Seu nome" />
+    <button onclick="enterSite()">Entrar</button>
   </div>
 
-  <!-- Conteúdo principal do site -->
+  <!-- Conteúdo principal -->
   <div id="main-content">
     <header>
       <h1>Agência de Casamentos & Eventos</h1>
       <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
     </header>
 
-    <section class="spaces">
-      <h2>Espaços Disponíveis</h2>
+    <section>
+      <h2>Locais disponíveis</h2>
       <div class="cards-container">
-
-        <!-- Quinta dos Sonhos -->
         <div class="card">
-          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quinta dos Sonhos">
           <h3>Quinta dos Sonhos</h3>
-          <p>Básico: 2000€ | Premium: 2500€ | Luxo: 3000€</p>
+          <p>Preço: 2000€</p>
           <button>Ver Pacotes</button>
         </div>
 
-        <!-- Salão Elegante -->
         <div class="card">
-          <img src="https://images.pexels.com/photos/2732303/pexels-photo-2732303.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salão Elegante">
           <h3>Salão Elegante</h3>
-          <p>Básico: 1500€ | Premium: 2000€ | Luxo: 2500€</p>
+          <p>Preço: 1500€</p>
           <button>Ver Pacotes</button>
         </div>
 
-        <!-- Jardim Encantado -->
         <div class="card">
-          <img src="https://images.pexels.com/photos/162827/wedding-ceremony-wedding-flowers-roses-162827.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jardim Encantado">
-          <h3>Jardim Encantado</h3>
-          <p>Básico: 1800€ | Premium: 2300€ | Luxo: 2800€</p>
+          <h3>Espaço Jardim Encantado</h3>
+          <p>Preço: 1800€</p>
           <button>Ver Pacotes</button>
         </div>
-
       </div>
     </section>
   </div>
@@ -196,18 +50,14 @@
     function enterSite() {
       const input = document.getElementById('username');
       const name = input.value.trim();
-      if (!name) {
-        alert('Por favor, digite seu nome.');
+      if(name.length === 0) {
+        alert('Por favor, digite o seu nome para continuar.');
         return;
       }
-      // Esconde a tela de boas-vindas
       document.getElementById('welcome').style.display = 'none';
-      // Mostra o conteúdo principal
       document.getElementById('main-content').style.display = 'block';
-      // Mostra o nome do usuário no site
       document.getElementById('user-name-display').textContent = name;
     }
   </script>
-
 </body>
 </html>
