@@ -1,23 +1,91 @@
-body {
-    font-family: Arial;
-    background-color: #f4f4f4;
-    }
-
-header {
-    background-color: #ff7a7a;
-    color: white;
-    text-align: center;
-    padding: 30px;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-section {
-    padding: 20px;
+/* BODY */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ffe6e6, #fff0f0);
+  color: #333;
+}
+
+/* TELAS */
+#welcome, #main-content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#main-content {
+  display: none;
+}
+
+/* INPUT E BOTÃO */
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ff7a7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ff4d4d;
+}
+
+/* HEADER */
+header {
+  background-color: #ff7a7a;
+  color: white;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+/* SEÇÃO DE CARDS */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card {
-    background: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 15px;
+}
+
+.card button {
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
