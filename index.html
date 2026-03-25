@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <title>Agência de Eventos</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonte elegante do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Tela de boas-vindas -->
   <div id="welcome">
     <h2>Bem-vindo à nossa Agência!</h2>
     <p>Por favor, digite seu nome para continuar:</p>
@@ -17,7 +15,6 @@
     <button onclick="enterSite()">Entrar</button>
   </div>
 
-  <!-- Conteúdo principal -->
   <div id="main-content">
 
     <header>
@@ -25,32 +22,37 @@
       <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
     </header>
 
-    <!-- Seção de Espaços -->
     <section class="spaces">
       <h2>Espaços Disponíveis</h2>
       <div class="cards-container">
+
+        <!-- Quinta dos Sonhos -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VlfHx8fHx8fHww&ixlib=rb-4.0.3&q=80&w=400" alt="Quinta dos Sonhos">
+          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quinta dos Sonhos">
           <h3>Quinta dos Sonhos</h3>
           <p>Básico: 2000€ | Premium: 2500€ | Luxo: 3000€</p>
           <button>Ver Pacotes</button>
         </div>
+
+        <!-- Salão Elegante -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Salão Elegante">
+          <img src="https://images.pexels.com/photos/17001834/pexels-photo-17001834.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salão Elegante">
           <h3>Salão Elegante</h3>
           <p>Básico: 1500€ | Premium: 2000€ | Luxo: 2500€</p>
           <button>Ver Pacotes</button>
         </div>
+
+        <!-- Jardim Encantado -->
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1507668077129-56c3d82b0f3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Jardim Encantado">
-          <h3>Espaço Jardim Encantado</h3>
+          <img src="https://images.pexels.com/photos/32994476/pexels-photo-32994476.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jardim Encantado">
+          <h3>Jardim Encantado</h3>
           <p>Básico: 1800€ | Premium: 2300€ | Luxo: 2800€</p>
           <button>Ver Pacotes</button>
         </div>
+
       </div>
     </section>
 
-    <!-- Seção de Pacotes -->
     <section class="packages">
       <h2>Pacotes Disponíveis</h2>
       <div class="cards-container">
@@ -79,7 +81,7 @@
       const input = document.getElementById('username');
       const name = input.value.trim();
       if(name.length === 0) {
-        alert('Por favor, digite o seu nome para continuar.');
+        alert('Por favor, digite o seu nome.');
         return;
       }
       document.getElementById('welcome').style.display = 'none';
