@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <title>Agência de Eventos</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonte elegante do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Tela de boas-vindas -->
   <div id="welcome">
     <h2>Bem-vindo à nossa Agência!</h2>
     <p>Por favor, digite seu nome para continuar:</p>
@@ -17,7 +15,6 @@
     <button onclick="enterSite()">Entrar</button>
   </div>
 
-  <!-- Conteúdo principal -->
   <div id="main-content">
 
     <header>
@@ -25,7 +22,6 @@
       <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
     </header>
 
-    <!-- Seção de Espaços -->
     <section class="spaces">
       <h2>Espaços Disponíveis</h2>
       <div class="cards-container">
@@ -40,15 +36,15 @@
 
         <!-- Salão Elegante -->
         <div class="card">
-          <img src="https://images.pexels.com/photos/196670/pexels-photo-196670.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salão Elegante">
+          <img src="https://images.pexels.com/photos/17001834/pexels-photo-17001834.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salão Elegante">
           <h3>Salão Elegante</h3>
           <p>Básico: 1500€ | Premium: 2000€ | Luxo: 2500€</p>
           <button>Ver Pacotes</button>
         </div>
 
-        <!-- Jardim com Flores -->
+        <!-- Jardim Encantado -->
         <div class="card">
-          <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jardim Encantado">
+          <img src="https://images.pexels.com/photos/32994476/pexels-photo-32994476.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jardim Encantado">
           <h3>Jardim Encantado</h3>
           <p>Básico: 1800€ | Premium: 2300€ | Luxo: 2800€</p>
           <button>Ver Pacotes</button>
@@ -57,7 +53,6 @@
       </div>
     </section>
 
-    <!-- Seção de Pacotes -->
     <section class="packages">
       <h2>Pacotes Disponíveis</h2>
       <div class="cards-container">
@@ -86,7 +81,7 @@
       const input = document.getElementById('username');
       const name = input.value.trim();
       if(name.length === 0) {
-        alert('Por favor, digite o seu nome para continuar.');
+        alert('Por favor, digite o seu nome.');
         return;
       }
       document.getElementById('welcome').style.display = 'none';
