@@ -1,59 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Agência de Eventos</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    #welcome, #main-content {
-      padding: 20px;
-      text-align: center;
-    }
-    #main-content {
-      display: none;
-    }
-    input[type="text"] {
-      padding: 8px;
-      width: 200px;
-      font-size: 16px;
-    }
-    button {
-      padding: 8px 15px;
-      font-size: 16px;
-      background-color: #ff7a7a;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-left: 10px;
-      border-radius: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Tela de boas-vindas -->
   <div id="welcome">
-    <h2>Olá! Qual é o seu nome?</h2>
-    <input type="text" id="username" placeholder="Escreva seu nome aqui" />
+    <h2>Bem-vindo à nossa Agência!</h2>
+    <p>Por favor, digite seu nome para continuar:</p>
+    <input type="text" id="username" placeholder="Seu nome" />
     <button onclick="enterSite()">Entrar</button>
   </div>
 
+  <!-- Conteúdo principal -->
   <div id="main-content">
     <header>
       <h1>Agência de Casamentos & Eventos</h1>
-      <p>Organiza o teu evento de forma simples, <span id="user-name-display"></span>!</p>
+      <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
     </header>
 
     <section>
       <h2>Locais disponíveis</h2>
+      <div class="cards-container">
+        <div class="card">
+          <h3>Quinta dos Sonhos</h3>
+          <p>Preço: 2000€</p>
+          <button>Ver Pacotes</button>
+        </div>
 
-      <div class="card">
-        <h3>Quinta dos Sonhos</h3>
-        <p>Preço: 2000€</p>
-      </div>
+        <div class="card">
+          <h3>Salão Elegante</h3>
+          <p>Preço: 1500€</p>
+          <button>Ver Pacotes</button>
+        </div>
 
-      <div class="card">
-        <h3>Salão Elegante</h3>
-        <p>Preço: 1500€</p>
+        <div class="card">
+          <h3>Espaço Jardim Encantado</h3>
+          <p>Preço: 1800€</p>
+          <button>Ver Pacotes</button>
+        </div>
       </div>
     </section>
   </div>
@@ -71,6 +59,5 @@
       document.getElementById('user-name-display').textContent = name;
     }
   </script>
-
 </body>
 </html>
