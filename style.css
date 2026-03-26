@@ -12,100 +12,129 @@ body {
   color: #333;
 }
 
-/* TELAS */
-#welcome, #main-content {
+/* LOGIN CENTRALIZADO */
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CAIXA DE LOGIN */
+.login-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 25px;
   text-align: center;
-  padding: 50px 20px;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.5s;
 }
 
-#main-content {
-  display: none;
+/* TÍTULO LOGIN */
+.login-box h2 {
+  font-family: 'Great Vibes', cursive;
+  color: #ff5f87;
+  margin-bottom: 10px;
+  font-size: 28px;
 }
 
-/* INPUT E BOTÃO */
-input[type="text"] {
-  padding: 10px;
-  width: 250px;
-  font-size: 16px;
+/* TEXTO LOGIN */
+.login-box p {
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 20px;
   border: 1px solid #ffb6c1;
-  margin-top: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
-button {
-  padding: 10px 20px;
+.login-box input:focus {
+  border-color: #ff5f87;
+  box-shadow: 0 0 8px rgba(255,95,135,0.4);
+  outline: none;
+}
+
+/* BOTÃO */
+.login-box button {
   margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
   background-color: #ff8fb1;
   color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+  font-weight: bold;
   font-size: 16px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
+.login-box button:hover {
   background-color: #ff5f87;
+}
+
+/* CONTEÚDO PRINCIPAL */
+#main-content {
+  display: none;
+  opacity: 0;
+  padding: 20px;
+  text-align: center;
+  transition: 0.5s;
 }
 
 /* HEADER */
 header {
   background-color: #ff8fb1;
   color: white;
-  padding: 50px 20px;
-  margin-bottom: 30px;
+  padding: 40px;
   border-radius: 20px;
+  margin-bottom: 30px;
   font-family: 'Great Vibes', cursive;
-  letter-spacing: 1px;
 }
 
-/* SEÇÕES DE CARDS */
+/* CARDS */
 .cards-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 .card {
-  background-color: white;
+  background: white;
   padding: 15px;
   border-radius: 20px;
   width: 250px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
+  transition: 0.3s;
 }
 
-.card h3 {
-  margin: 10px 0;
-  font-family: 'Great Vibes', cursive;
-  font-size: 22px;
-  color: #ff5f87;
-}
-
-.card p {
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: #555;
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
   border-radius: 15px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #ff5f87;
+  font-family: 'Great Vibes', cursive;
+}
+
+.card p {
   margin-bottom: 10px;
-}
-
-.card button {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  color: #555;
 }
