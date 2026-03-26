@@ -97,6 +97,11 @@
       font-family: 'Great Vibes', cursive;
     }
 
+    .card p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
     .card button {
       width: 100%;
     }
@@ -105,55 +110,76 @@
 
 <body>
 
-  <!-- LOGIN -->
+  <!-- TELA DE LOGIN -->
   <div id="welcome">
-    <h2>Bem-vindo!</h2>
-    <p>Digite seu nome:</p>
+    <h2>Bem-vindo à nossa Agência!</h2>
+    <p>Digite seu nome para continuar:</p>
 
     <input type="text" id="username" placeholder="Seu nome" onkeypress="handleKey(event)">
     <br>
     <button onclick="enterSite()">Entrar</button>
   </div>
 
-  <!-- SITE -->
+  <!-- CONTEÚDO -->
   <div id="main-content">
 
     <header>
       <h1>Agência de Casamentos & Eventos</h1>
-      <p>Bem-vindo, <span id="user-name-display"></span>!</p>
+      <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
     </header>
 
+    <!-- ESPAÇOS -->
     <section>
-      <h2>Espaços</h2>
+      <h2>Espaços Disponíveis</h2>
       <div class="cards-container">
 
         <div class="card">
           <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg">
           <h3>Quinta dos Sonhos</h3>
+          <p>Básico: 2000€ | Premium: 2500€ | Luxo: 3000€</p>
           <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
         <div class="card">
           <img src="https://images.pexels.com/photos/17001834/pexels-photo-17001834.jpeg">
           <h3>Salão Elegante</h3>
+          <p>Básico: 1500€ | Premium: 2000€ | Luxo: 2500€</p>
           <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
         <div class="card">
           <img src="https://images.pexels.com/photos/32994476/pexels-photo-32994476.jpeg">
           <h3>Jardim Encantado</h3>
+          <p>Básico: 1800€ | Premium: 2300€ | Luxo: 2800€</p>
           <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
       </div>
     </section>
 
+    <!-- PACOTES -->
     <section class="packages">
-      <h2>Pacotes</h2>
+      <h2>Pacotes Disponíveis</h2>
       <div class="cards-container">
-        <div class="card"><h3>Básico</h3></div>
-        <div class="card"><h3>Premium</h3></div>
-        <div class="card"><h3>Luxo</h3></div>
+
+        <div class="card">
+          <h3>Básico</h3>
+          <p>Espaço + Decoração simples</p>
+          <p>Preço: 1500€ - 2000€</p>
+        </div>
+
+        <div class="card">
+          <h3>Premium</h3>
+          <p>Espaço + DJ + Decoração + Catering</p>
+          <p>Preço: 2000€ - 2500€</p>
+        </div>
+
+        <div class="card">
+          <h3>Luxo</h3>
+          <p>Tudo incluído: Espaço, DJ, Catering, Decoração completa</p>
+          <p>Preço: 2500€ - 3000€</p>
+        </div>
+
       </div>
     </section>
 
@@ -176,12 +202,12 @@
 
       localStorage.setItem("username", name);
 
-      // NÃO ESCONDE — apenas transforma
+      // Login continua visível (apenas muda)
       const welcome = document.getElementById("welcome");
       welcome.style.opacity = "0.6";
       welcome.style.transform = "scale(0.9)";
 
-      // mostra conteúdo
+      // Mostrar conteúdo
       const main = document.getElementById("main-content");
       main.style.display = "block";
 
@@ -199,7 +225,7 @@
       });
     }
 
-    // carregar nome salvo
+    // Carregar nome salvo
     window.onload = function () {
       const savedName = localStorage.getItem("username");
 
