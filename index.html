@@ -5,119 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agência de Eventos</title>
 
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #fff1f5, #ffe6f0);
-      color: #333;
-    }
-
-    #welcome {
-      text-align: center;
-      padding: 50px 20px;
-      transition: 0.5s;
-    }
-
-    #main-content {
-      display: none;
-      opacity: 0;
-      text-align: center;
-      padding: 20px;
-    }
-
-    input {
-      padding: 10px;
-      width: 250px;
-      border-radius: 20px;
-      border: 1px solid #ffb6c1;
-      margin-top: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 10px;
-      background-color: #ff8fb1;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #ff5f87;
-    }
-
-    header {
-      background-color: #ff8fb1;
-      color: white;
-      padding: 40px;
-      border-radius: 20px;
-      margin-bottom: 30px;
-      font-family: 'Great Vibes', cursive;
-    }
-
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 20px;
-      width: 250px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .card h3 {
-      margin: 10px 0;
-      color: #ff5f87;
-      font-family: 'Great Vibes', cursive;
-    }
-
-    .card p {
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    .card button {
-      width: 100%;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- TELA DE LOGIN -->
+  <!-- LOGIN -->
   <div id="welcome">
-    <h2>Bem-vindo à nossa Agência!</h2>
-    <p>Digite seu nome para continuar:</p>
+    <div class="login-box">
+      <h2>Bem-vindo à nossa Agência 💍</h2>
+      <p>Digite seu nome para continuar:</p>
 
-    <input type="text" id="username" placeholder="Seu nome" onkeypress="handleKey(event)">
-    <br>
-    <button onclick="enterSite()">Entrar</button>
+      <input type="text" id="username" placeholder="Seu nome" onkeypress="handleKey(event)">
+      <button onclick="enterSite()">Entrar</button>
+    </div>
   </div>
 
   <!-- CONTEÚDO -->
@@ -185,6 +87,7 @@
 
   </div>
 
+  <!-- JAVASCRIPT -->
   <script>
     function handleKey(event) {
       if (event.key === "Enter") {
@@ -202,17 +105,14 @@
 
       localStorage.setItem("username", name);
 
-      // Login continua visível (apenas muda)
-      const welcome = document.getElementById("welcome");
-      welcome.style.opacity = "0.6";
-      welcome.style.transform = "scale(0.9)";
+      // efeito no login
+      document.getElementById("welcome").classList.add("active");
 
-      // Mostrar conteúdo
+      // mostrar conteúdo
       const main = document.getElementById("main-content");
       main.style.display = "block";
 
       setTimeout(() => {
-        main.style.transition = "0.5s";
         main.style.opacity = "1";
       }, 100);
 
@@ -225,7 +125,6 @@
       });
     }
 
-    // Carregar nome salvo
     window.onload = function () {
       const savedName = localStorage.getItem("username");
 
@@ -233,9 +132,7 @@
         document.getElementById("username").value = savedName;
         document.getElementById("user-name-display").textContent = savedName;
 
-        const welcome = document.getElementById("welcome");
-        welcome.style.opacity = "0.6";
-        welcome.style.transform = "scale(0.9)";
+        document.getElementById("welcome").classList.add("active");
 
         const main = document.getElementById("main-content");
         main.style.display = "block";
