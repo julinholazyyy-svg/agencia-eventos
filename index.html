@@ -11,23 +11,25 @@
 
 <body>
 
-  <!-- LOGIN -->
+  <!-- TELA INICIAL -->
   <div id="welcome">
     <div class="login-box">
-      <h2>Bem-vindo à nossa Agência 💍</h2>
-      <p>Digite seu nome para continuar:</p>
+      <h2>Bem-vindo 💍</h2>
+      <p>Digite seus dados para entrar:</p>
 
-      <input type="text" id="username" placeholder="Seu nome" onkeypress="handleKey(event)">
+      <input type="text" id="username" placeholder="Seu nome">
+      <input type="number" id="age" placeholder="Sua idade">
+
       <button onclick="enterSite()">Entrar</button>
     </div>
   </div>
 
-  <!-- CONTEÚDO -->
+  <!-- SITE -->
   <div id="main-content">
 
     <header>
       <h1>Agência de Casamentos & Eventos</h1>
-      <p>Planeje o evento dos seus sonhos, <span id="user-name-display"></span>!</p>
+      <p>Bem-vindo, <span id="user-name-display"></span> (<span id="user-age-display"></span> anos)!</p>
     </header>
 
     <!-- ESPAÇOS -->
@@ -39,28 +41,25 @@
           <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg">
           <h3>Quinta dos Sonhos</h3>
           <p>Básico: 2000€ | Premium: 2500€ | Luxo: 3000€</p>
-          <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
         <div class="card">
           <img src="https://images.pexels.com/photos/17001834/pexels-photo-17001834.jpeg">
           <h3>Salão Elegante</h3>
           <p>Básico: 1500€ | Premium: 2000€ | Luxo: 2500€</p>
-          <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
         <div class="card">
           <img src="https://images.pexels.com/photos/32994476/pexels-photo-32994476.jpeg">
           <h3>Jardim Encantado</h3>
           <p>Básico: 1800€ | Premium: 2300€ | Luxo: 2800€</p>
-          <button onclick="scrollToPackages()">Ver Pacotes</button>
         </div>
 
       </div>
     </section>
 
     <!-- PACOTES -->
-    <section class="packages">
+    <section>
       <h2>Pacotes Disponíveis</h2>
       <div class="cards-container">
 
@@ -72,13 +71,13 @@
 
         <div class="card">
           <h3>Premium</h3>
-          <p>Espaço + DJ + Decoração + Catering</p>
+          <p>Espaço + DJ + Catering + Decoração</p>
           <p>Preço: 2000€ - 2500€</p>
         </div>
 
         <div class="card">
           <h3>Luxo</h3>
-          <p>Tudo incluído: Espaço, DJ, Catering, Decoração completa</p>
+          <p>Tudo incluído</p>
           <p>Preço: 2500€ - 3000€</p>
         </div>
 
@@ -87,28 +86,25 @@
 
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
-    function handleKey(event) {
-      if (event.key === "Enter") {
-        enterSite();
-      }
-    }
-
     function enterSite() {
       const name = document.getElementById("username").value.trim();
+      const age = document.getElementById("age").value;
 
-      if (name === "") {
-        alert("Digite seu nome!");
+      if (name === "" || age === "") {
+        alert("Preencha nome e idade!");
         return;
       }
 
-      localStorage.setItem("username", name);
+      if (age < 18) {
+        alert("Você precisa ter pelo menos 18 anos!");
+        return;
+      }
 
-      // efeito no login
-      document.getElementById("welcome").classList.add("active");
+      // esconder login
+      document.getElementById("welcome").style.display = "none";
 
-      // mostrar conteúdo
+      // mostrar site
       const main = document.getElementById("main-content");
       main.style.display = "block";
 
@@ -116,28 +112,9 @@
         main.style.opacity = "1";
       }, 100);
 
+      // mostrar dados
       document.getElementById("user-name-display").textContent = name;
-    }
-
-    function scrollToPackages() {
-      document.querySelector(".packages").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-
-    window.onload = function () {
-      const savedName = localStorage.getItem("username");
-
-      if (savedName) {
-        document.getElementById("username").value = savedName;
-        document.getElementById("user-name-display").textContent = savedName;
-
-        document.getElementById("welcome").classList.add("active");
-
-        const main = document.getElementById("main-content");
-        main.style.display = "block";
-        main.style.opacity = "1";
-      }
+      document.getElementById("user-age-display").textContent = age;
     }
   </script>
 
